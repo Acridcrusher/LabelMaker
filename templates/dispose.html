@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <title> {% block title %} Dispose Page {% endblock %}</title>
+    <form method="post" class="tableformat">
+        <table>
+            <ul>
+                <tr>
+                    <td><label for="client">Client: </label></td>
+                    <td><input type="text" name="client" placeholder="Client name" value="{{ request.form['client'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="ticketno">Ticket No: </label></td>
+                    <td><input type="text" name="ticketno" placeholder="T########.####" value="{{ request.form['ticketno'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="date">Date received: </label></td>
+                    <td><input type="date" name="date" value="{{ request.form['date']}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="device">Make/Model: </label></td>
+                    <td><input type="text" name="device" placeholder="device make and model" value="{{ request.form['device']}}"></td>
+                </tr>
+                <tr>
+                    <td><label for="serialno">Serial No: </label></td>
+                    <td><input type="text" name="serialno" placeholder="S/T | S/N" value="{{ request.form['serialno'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="ettag">ET Tag: </label></td>
+                    <td><input type="text" name="ettag" placeholder="ET Tag" value="{{ request.form['ettag'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="addnotes">Additional Notes</label></td>
+                    <td><input type="text" name="addnotes" placeholder="Any useful notes" value="{{ request.form['addnotes']}}"></td>
+                </tr>
+            </ul>
+        </table>
+        <input type="submit">
+    </form>
+{% endblock %}
+
+<!--
+client
+ticketno
+date
+device
+serialno
+ettag
+addnotes
+-->

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock %} - flasktemplate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+</head>
+<body>
+    <nav>   
+        <ul class="navigation-bar">
+            <a href="{{ url_for('index') }}" {% if active_page == 'index' %}class="active"{% endif %}><img class="enable-logo" src="{{ url_for('static', filename='enable-logo.png') }}"></a>
+            <li><a href="{{ url_for('build') }}">Build</a></li>
+            <li><a href="{{ url_for('repair') }}">Repair</a></li>
+            <li><a href="{{ url_for('stock') }}">Stock</a></li>
+            <li><a href="{{ url_for('dispose') }}">Dispose</a></li>
+            <li><a href="{{ url_for('history') }}">label history</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        {% for message in get_flashed_messages() %}
+            <div class="alert"> {{ message }}</div>
+        {% endfor %}
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
+
+<!-- 
+<li><a href="/" {% if active_page == 'home' %}class="active"{% endif %}>Home</a></li>
+<li><a href="/about" {% if active_page == 'about' %}class="active"{% endif %}>About</a></li>
+-->
+
+
+<!-- 
+.active {
+            font-weight: bold;
+            color: #3498db; /* Your chosen color */
+        }
+-->

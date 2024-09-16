@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <title> {% block title %} Repair Page {% endblock %}</title>
+    <form method="post" class="tableformat">
+        <table>
+            <ul>
+                <tr>
+                    <td><label for="client">Client: </label></td>
+                    <td><input type="text" name="client" placeholder="Client name" value="{{ request.form['client'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="ticketno">Ticket No. </label></td>
+                    <td><input type="text" name="ticketno" placeholder="T########.####" value="{{ request.form['ticketno'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="datereceived">Date received: </label></td>
+                    <td><input type="date" name="datereceived" value="{{ request.form['datereceived'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="ettag">ET Tag: </label></td>
+                    <td><input type="text" name="ettag" placeholder="ET####" value="{{ request.form['ettag'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="makemodel">Make/Model: </label></td>
+                    <td><input type="text" name="makemodel" placeholder="Device Model" value="{{ request.form['makemodel'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="serialno">Serial no. </label></td>
+                    <td><input type="text" name="serialno" placeholder="S/N | S/T" value="{{ request.form['serialno'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="addnotes"></label></td>
+                    <td><input type="text" name="addnotes" placeholder="anything that could be helpful" value="{{ request.form['addnotes'] }}"></td>
+                </tr>
+            </ul>
+        </table>
+        <input type="submit">
+    </form>
+{% endblock %}

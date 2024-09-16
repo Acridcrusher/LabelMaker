@@ -1,0 +1,98 @@
+ /* -- image details -- */
+.logo {
+    display: grid;
+    align-items: center;
+    justify-content: space-evenly;
+    size: 250px;
+}
+
+img {
+    width: 50%;
+    display: block;
+    height: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* -- List items -- */
+.parent {
+    display: contents;
+    list-style: none;
+    position: fixed;
+    
+}
+
+.child {
+    display: inline-table;    
+}
+
+#fixedInfo {
+    text-align: right;
+    padding-left: 5%;
+}
+
+#editedInfo {
+    text-align: left;
+}
+
+li {
+    align-items: right;
+}
+
+#fixedChild {
+    height: 20px;
+    width: 104.2px;
+}
+
+#editedChild {
+    height: 20px;
+    width: 235px;
+}
+
+
+/* -- additional information -- */
+.addNotes {
+    overflow: hidden;
+}
+#title {
+    padding-left: 20px;
+}
+
+#textbox {
+    border: 2px solid black;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-color: black;
+    width: 90%;
+    height: 75px;
+
+}
+
+
+/* -- main html details -- */
+html {
+    width: 380.5px;
+    height: 570.4px;
+    /* border: 2px solid black; */
+}
+
+.foldbar {
+    position: relative;
+    bottom: 225;
+    width: 100%;
+    position: absolute;
+}
+
+#footbar {
+    width: 95%;
+    background-color: black;
+}
+
+body { 
+    /* border: 2px solid black;*/
+    display: block;
+    position: relative;
+}
+

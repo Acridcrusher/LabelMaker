@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <title>{% block title %} Label history {% endblock %}</title>
+    <ul>
+        {% for file in files %}
+            {% if file != "enable-logo.png" %}
+                {% if file != "history_stylesheet.css" %}
+                    <li><a href="{{ url_for('open_file', filename=file) }}">{{ file }}</a></li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
