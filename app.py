@@ -23,7 +23,7 @@ def build():
         return redirect(f"./history/{ticketno}.html")
     return render_template("build.html")
 
-@app.route("/repair.html") # done
+@app.route("/repair.html", methods=("GET","POST")) # done
 def repair():
     if request.method == 'POST':
         client = request.form['client']

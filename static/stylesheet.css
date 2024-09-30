@@ -87,3 +87,6 @@ section::after {
     display: block;
 }
 
+#myframe {
+    background-color: #e8e8e8;
+}

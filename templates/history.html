@@ -6,12 +6,12 @@
         {% for file in files %}
             {% if file != "enable-logo.png" %}
                 {% if file != "history_stylesheet.css" %}
-                    <li><a href="{{ url_for('open_file', filename=file) }}">{{ file }}</a></li>
+                    <li><a href="{{ url_for('open_file', filename=file) }}" target="myframe">{{ file }}</a></li>
                 {% endif %}
             {% endif %}
         {% endfor %}
     </ul>
-    <iframe>
+    <iframe name="myframe" width="380.5" height="574.4">
         
     </iframe>
 {% endblock %}
