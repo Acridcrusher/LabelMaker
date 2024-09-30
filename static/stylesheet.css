@@ -87,6 +87,12 @@ section::after {
     display: block;
 }
 
-#myframe {
+.page-preview {
+    display: grid;
+    float: right;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border:1px #111;
+    padding: -10px;
     background-color: #e8e8e8;
 }
