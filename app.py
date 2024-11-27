@@ -23,7 +23,7 @@ def build():
         return redirect(f"./history/{ticketno}.html")
     return render_template("build.html")
 
-@app.route("/repair.html") # done
+@app.route("/repair.html", methods=("GET","POST")) # done
 def repair():
     if request.method == 'POST':
         client = request.form['client']
@@ -77,4 +77,5 @@ def open_file(filename):
     directory = "./history"
     return send_from_directory(directory,filename)
 
-app.run(host="0.0.0.0", port=80)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=80)
