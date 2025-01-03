@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=380.5 height=574.4 initial-scale=1.0">
+    <title>Build Label</title>
+    <style>
+        /* -- image details -- */
+        .logo {
+            display: grid;
+            align-items: center;
+            justify-content: space-evenly;
+            size: 250px;
+        }
+
+        img {
+            width: 50%;
+            display: block;
+            height: auto;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* -- List items -- */
+        .parent {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .child {
+            display: table-cell;
+            vertical-align: top;
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+        }
+
+        #fixedInfo {
+            text-align: right;
+            padding-right: 5px; /* Adjust padding as needed */
+        }
+
+        #editedInfo {
+            text-align: left;
+            padding-left: 5px; /* Adjust padding as needed */
+        }
+
+        li {
+            align-items: right;
+        }
+
+        #fixedChild, #editedChild {
+            height: 20px;
+        }
+
+        /* -- additional information -- */
+        .addNotes {
+            overflow: hidden;
+        }
+
+        #title {
+            padding-left: 20px;
+        }
+
+        #textbox {
+            border: 2px solid black;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            border-color: black;
+            width: 90%;
+            height: 75px;
+        }
+
+        /* -- main html details -- */
+        html {
+            width: 380.5px;
+            height: 570.4px;
+        }
+
+        .foldbar {
+            position: relative;
+            bottom: 225;
+            width: 100%;
+            position: absolute;
+        }
+
+        #footbar {
+            width: 95%;
+            background-color: black;
+        }
+
+        body {
+            display: block;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="enable-logo.png">
+    </div>
+    <div class="parent">
+        <ul class="child" id="fixedInfo">
+            <li id="fixedChild">Client :</li>
+            <li id="fixedChild">User :</li>
+            <li id="fixedChild">Due Date :</li>
+            <li id="fixedChild">Ticket No :</li>
+            <li id="fixedChild">Serial Number :</li>
+            <li id="fixedChild">ET Tag :</li>
+        </ul>
+        <ul class="child" id="editedInfo">
+            <li id="editedChild">The Rage Lords<!-- client --></li>
+            <li id="editedChild">Brandon<!-- user --></li>
+            <li id="editedChild">today<!-- due date --></li>
+            <li id="editedChild">T20241231.0001<!-- ticket number --></li>
+            <li id="editedChild">S931922<!-- serial number --></li>
+            <li id="editedChild">ET3004<!-- et tag --></li>
+        </ul>
+    </div>
+    <hr>
+    <div class="addNotes">
+        <p id="title">Additional Notes</p>
+        <div id="textbox">
+            <p contenteditable="true">no ntoes<!-- note field --></p>
+        </div>
+    </div>
+    <div class="foldbar">
+        <hr id="footbar">
+    </div>
+</body>
+<script>window.print()</script>
+</html>

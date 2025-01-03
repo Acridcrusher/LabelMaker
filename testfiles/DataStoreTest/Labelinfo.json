@@ -1,0 +1,42 @@
+{
+    "ticketno": {
+        "client": "client name",
+        "user": "users name",
+        "duedate": "duedate",
+        "ticketno": "ticketno",
+        "serialno": "serial number",
+        "ETtag": "ETtag",
+        "addnotes": "additional notes"
+    },
+    "ticketno2": {
+        "client": "client name2",
+        "user": "users name2",
+        "duedate": "duedate2",
+        "ticketno": "ticketno2",
+        "serialno": "serial number2",
+        "ETtag": "ETtag2",
+        "addnotes": "additional notes2"
+    },
+    "T29102": [
+        {
+            "client": "the rage lords",
+            "attribute": "brandon",
+            "duedate": "today",
+            "ticketno": "T29102",
+            "serialno": "s8392",
+            "ettag": "et3004",
+            "addnotes": "no notes"
+        }
+    ],
+    "T20241231.0001": [
+        {
+            "client": "The Rage Lords",
+            "attribute": "Brandon",
+            "duedate": "today",
+            "ticketno": "T20241231.0001",
+            "serialno": "S931922",
+            "ettag": "ET3004",
+            "addnotes": "no ntoes"
+        }
+    ]
+}
