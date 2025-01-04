@@ -4,6 +4,11 @@ import templates
 import os
 import pdfkit
 
+# installed at: https://wkhtmltopdf.org/downloads.html
+# is needed for pdfkit to work / because fuck python and it working fine one day and not the next
+path_to_wkhtmltopdf = r"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe"
+config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
+
 # declares filepaths for code to run
 directory = os.path.abspath("")
 iamge_dir = os.path.join(directory,"images")
@@ -94,7 +99,11 @@ def add_to_database(client, attrib, duedate, ticketno, serialno, ettag, addnotes
 
     create_html(entryname)
 
-
+def printpdf():
+    html_file = os.path.join(static,"output.html")
+    pdf_file = "out.pdf"
+    pdfkit.from_file(html_file,pdf_file, options={"load-error-handling":"ignore","enable-local-file-access":""}, configuration=config)
+    os.startfile(pdf_file,"print")
 
 
 # pulling information out of the json file #

@@ -34,5 +34,17 @@
             "addnotes": "test test test test test test test test test test test test test test test test test test test test test test test ",
             "type": "build"
         }
+    ],
+    "duck": [
+        {
+            "client": "ducky",
+            "attribute": "used",
+            "duedate": "2025-01-04",
+            "ticketno": "duck",
+            "serialno": "Duck",
+            "ettag": "duck",
+            "addnotes": "ducky likes bird seeds",
+            "type": "stock"
+        }
     ]
 }

@@ -90,6 +90,11 @@ def create_html(entryname):
     databaseInteraction.create_html(entryname)
     return jsonify({"status":"success","entryname":entryname})
 
+@app.route('/run-script')
+def run_script():
+    databaseInteraction.printpdf()
+    return jsonify({'status':'Label printing'})
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80)

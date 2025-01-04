@@ -6,8 +6,17 @@
     <div id="boxes-container"></div>
     <div class="iframe-container">
         <iframe id="iframe"></iframe>
+        <button onclick="runScript()">Print</button>
     </div>
     <script>
+        function runScript() {
+            fetch('/run-script')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.status);
+                    alert(data.status);
+                });
+        }
         document.addEventListener("DOMContentLoaded", function() {
             fetch("/get_data")
                 .then(response => response.json())
