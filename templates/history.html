@@ -1,14 +1,56 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="history-body">
     <title>{% block title %} Label history {% endblock %}</title>
-    <ul>
-        {% for file in files %}
-            {% if file != "enable-logo.png" %}
-                {% if file != "history_stylesheet.css" %}
-                    <li><a href="{{ url_for('open_file', filename=file) }}">{{ file }}</a></li>
-                {% endif %}
-            {% endif %}
-        {% endfor %}
-    </ul>
+    <div id="boxes-container"></div>
+    <div class="iframe-container">
+        <iframe id="iframe"></iframe>
+        <button onclick="runScript()">Print</button>
+    </div>
+    <script>
+        function runScript() {
+            fetch('/run-script')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.status);
+                    alert(data.status);
+                });
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("/get_data")
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById("boxes-container");
+                    for (const key in data) {
+                        if (data.hasOwnProperty(key)) {
+                            const item = data[key][0];  // Assuming each key has a list with one item
+                            const box = document.createElement("div");
+                            box.className = "box";
+                            box.innerHTML = `
+                                <p>Client: ${item.client}</p>
+                                <p>Attribute: ${item.attribute}</p>
+                                <p>Due Date: ${item.duedate}</p>
+                                <p>Ticket No: ${item.ticketno}</p>
+                                <p>Serial No: ${item.serialno}</p>
+                                <p>ET Tag: ${item.ettag}</p>
+                                <p>Additional Notes: <br>
+                                ${item.addnotes}</p>
+                            `;
+                            box.addEventListener("click", () => {
+                                fetch(`/create_html/${key}`)
+                                    .then(response => response.json())
+                                    .then(result => {
+                                        if (result.status === "success") {
+                                            document.getElementById("iframe").src = `/static/output.html`;
+                                        }
+                                    });
+                            });
+                            container.appendChild(box);
+                        }
+                    }
+                });
+        });
+    </script>
+    </div>
 {% endblock %}

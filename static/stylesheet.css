@@ -77,9 +77,6 @@ section::after {
     height:auto
 }
 
-.tableformat table tr td label {
-
-}
 
 #formsubmit {
     position: relative;
@@ -87,3 +84,80 @@ section::after {
     display: block;
 }
 
+.page-preview {
+    display: grid;
+    float: right;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border:1px #111;
+    padding: -10px;
+    background-color: #e8e8e8;
+}
+
+/* label history */
+
+* {
+    box-sizing: border-box;
+}
+
+.history-body {
+    width: 67%;
+    margin-top: 10px;
+}
+
+/* .boxes-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.box {
+    float: left;
+    width: 25%;
+    background-color: #fff;
+    border-radius: 10px;
+    margin:5px;
+}
+
+*/
+
+#boxes-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.box {
+    width: 30%;
+    margin: 1%;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 10px;
+    word-wrap:break-word;
+}
+
+.box p {
+    margin: 2px;
+} 
+
+.iframe-container {
+    position: fixed;
+    top:10%;
+    right: 0;
+    width: 381px;
+    height: 80%;
+}
+    
+
+
+iframe {
+    position: relative;
+    transform: scale(0.90);
+    transform-origin: 0 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+}
