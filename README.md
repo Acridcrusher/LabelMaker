@@ -1,5 +1,3 @@
-#git/LabelMaker
-
 # Setup
 ### requirements
 - Python 3.12 or above
