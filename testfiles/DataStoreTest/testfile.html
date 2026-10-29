@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <title> {% block title %} Stock Page {% endblock %}</title>
+    <form method="POST" class="tableformat">
+        <table>
+            <ul>
+                <tr>
+                    <td><label for="client">Client: </label></td>
+                    <td><input type="text" name="client" placeholder="Client's name" value="{{ request.form['client'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="neworused">New or Used: </label></td>
+                    <!-- <td><input type="drop" name="neworused" value="{{ request.form['neworused'] }}"></td> -->
+                     <td>
+                        <select name="neworused" method="GET" action="/stock">
+                            {% for status in neworused %}
+                                <option value="{{status}}" selected>{{status}}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="datereceived">Date received: </label></td>
+                    <td><input type="date" name="datereceived" value="{{ request.form['datereceived'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="ettag">ET Tag: </label></td>
+                    <td><input type="text" name="ettag" placeholder="ET####" value="{{ request.form['ettag'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="device">Device Model: </label></td>
+                    <td><input type="text" name="device" placeholder="What is the device model" value="{{ request.form['device'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="serialno">Serial No. </label></td>
+                    <td><input type="text" name="serialno" placeholder="S/N or S/T number" value="{{ request.form['serialno'] }}"></td>
+                </tr>
+                <tr>
+                    <td><label for="addnote">Additional Notes</label></td>
+                    <td><input type="text" name="addnote" placeholder="Any additional notes that could be useful" value="{{ request.form['addnote'] }}"></td>
+                </tr>
+            </ul>
+        </table>
+        <input type="submit">
+    </form>
+{% endblock %}
+
+<!-- 
+client = input("Who is the client: ")
+    neworused = input("Is the device 'new' or 'used': ") - check box?
+    date = input("When was the device received: ")
+    device = input("What is the device make - model: ")
+    serialNo = input("What is the serial number: ")
+    addnotes = input("Any additional notes(optional): ")
+-->
